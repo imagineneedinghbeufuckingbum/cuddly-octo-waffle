@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Top #1 RFL Script">
+    <meta property="og:title" content="999cc">
+    <meta property="og:description" content="Top #1 RFL Script">
+    <meta property="og:url" content="https://999.hbe.world">
+    <meta property="og:type" content="website">
+    <title>999cc</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: #000428;
+            color: white;
+            text-align: center;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .header {
+            margin-top: 20vh;
+            font-size: 4.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation: slideDown 1.5s ease-out;
+        }
+
+        .sub-header {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: slideDown 2s ease-out;
+        }
+
+        .btn-container {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn {
+            font-size: 1.2rem;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1.5s ease-out;
+            border: 1px solid white;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="starCanvas"></canvas>
+
+    <div class="btn-container">
+        <a href="https://hbe.world/features" class="btn">Features</a>
+    </div>
+
+    <div class="content">
+        <div class="header">999.CC</div>
+        <div class="sub-header">#1 Legit RFL Script</div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('starCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let stars = [];
+
+        function createStars() {
+            for (let i = 0; i < 200; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 2 + 0.5,
+                    speed: Math.random() * 0.5 + 0.2,
+                    opacity: Math.random() * 0.5 + 0.5
+                });
+            }
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let star of stars) {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                ctx.fill();
+
+                star.y += star.speed;
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                    star.x = Math.random() * canvas.width;
+                }
+            }
+
+            requestAnimationFrame(animateStars);
+        }
+
+        createStars();
+        animateStars();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            stars = [];
+            createStars();
+        });
+    </script>
+</body>
+</html>
