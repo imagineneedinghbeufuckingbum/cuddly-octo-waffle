@@ -65,10 +65,20 @@
             color: white;
             cursor: pointer;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeIn 1.5s ease-out;
             border: 1px solid white;
+        }
+
+        .btn img {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
         }
 
         .btn:hover {
@@ -101,7 +111,9 @@
     <canvas id="starCanvas"></canvas>
 
     <div class="btn-container">
-        <a href="https://hbe.world/features" class="btn">Features</a>
+        <a href="https://hbe.world/features" class="btn">
+            <img src="https://via.placeholder.com/20" alt="Feature Icon"> Features
+        </a>
     </div>
 
     <div class="content">
