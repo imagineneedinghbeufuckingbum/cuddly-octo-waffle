@@ -49,16 +49,19 @@
             animation: slideDown 2s ease-out;
         }
 
-        .transparent-btn {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
+        .btn {
+            font-size: 1.2rem;
+            color: white;
+            background: none;
             border: none;
             cursor: pointer;
-            z-index: 5;
+            text-decoration: underline;
+            margin-top: 20px;
+            z-index: 10;
+        }
+
+        .btn:hover {
+            color: #aaa;
         }
 
         @keyframes fadeIn {
@@ -85,11 +88,10 @@
 <body>
     <canvas id="starCanvas"></canvas>
 
-    <button class="transparent-btn" onclick="location.href='https://hbe.world/features'"></button>
-
     <div class="content">
         <div class="header">999.CC</div>
         <div class="sub-header">#1 Legit RFL Script</div>
+        <button class="btn" onclick="window.open('https://hbe.world/features', '_blank')">Features</button>
     </div>
 
     <script>
@@ -101,7 +103,7 @@
 
         let stars = [];
 
-        function createStars() {
+        function stars() {
             for (let i = 0; i < 200; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
@@ -113,7 +115,7 @@
             }
         }
 
-        function animateStars() {
+        function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             for (let star of stars) {
@@ -129,17 +131,17 @@
                 }
             }
 
-            requestAnimationFrame(animateStars);
+            requestAnimationFrame(animate);
         }
 
-        createStars();
-        animateStars();
+        stars();
+        animate();
 
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             stars = [];
-            createStars();
+            stars();
         });
     </script>
 </body>
