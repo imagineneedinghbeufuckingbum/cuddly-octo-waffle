@@ -6,7 +6,7 @@
     <meta name="description" content="Top #1 RFL Script">
     <meta property="og:title" content="999cc">
     <meta property="og:description" content="Top #1 RFL Script">
-    <meta property="og:url" content="https://hbe.world">
+    <meta property="og:url" content="https://999.hbe.world">
     <meta property="og:type" content="website">
     <title>999cc</title>
     <style>
@@ -49,19 +49,31 @@
             animation: slideDown 2s ease-out;
         }
 
+        .btn-container {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
         .btn {
             font-size: 1.2rem;
-            color: white;
-            background: none;
+            padding: 10px 30px;
             border: none;
+            border-radius: 30px;
+            background: transparent;
+            color: white;
             cursor: pointer;
-            text-decoration: underline;
-            margin-top: 20px;
-            z-index: 10;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1.5s ease-out;
+            border: 1px solid white;
         }
 
         .btn:hover {
-            color: #aaa;
+            transform: scale(1.1);
+            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.5);
         }
 
         @keyframes fadeIn {
@@ -103,7 +115,7 @@
 
         let stars = [];
 
-        function stars() {
+        function createStars() {
             for (let i = 0; i < 200; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
@@ -115,7 +127,7 @@
             }
         }
 
-        function animate() {
+        function animateStars() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             for (let star of stars) {
@@ -131,17 +143,17 @@
                 }
             }
 
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animateStars);
         }
 
-        stars();
-        animate();
+        createStars();
+        animateStars();
 
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             stars = [];
-            stars();
+            createStars();
         });
     </script>
 </body>
