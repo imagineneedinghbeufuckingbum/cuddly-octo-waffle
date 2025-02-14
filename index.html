@@ -49,30 +49,16 @@
             animation: slideDown 2s ease-out;
         }
 
-        .btn-container {
+        .transparent-btn {
             position: absolute;
-            top: 20px;
+            top: 0;
+            left: 0;
             width: 100%;
-            text-align: center;
-        }
-
-        .btn {
-            font-size: 1.2rem;
-            padding: 10px 30px;
+            height: 100%;
+            background: transparent;
             border: none;
-            border-radius: 30px;
-            background: white;
-            color: #000428;
             cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        .btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.5);
+            z-index: 5;
         }
 
         @keyframes fadeIn {
@@ -99,9 +85,7 @@
 <body>
     <canvas id="starCanvas"></canvas>
 
-    <div class="btn-container">
-        <button class="btn" onclick="location.href='https://hbe.world/features'">Explore Features</button>
-    </div>
+    <button class="transparent-btn" onclick="location.href='https://hbe.world/features'"></button>
 
     <div class="content">
         <div class="header">999.CC</div>
