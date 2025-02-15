@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Top #1 RFL Script">
+    <meta property="og:title" content="999cc">
+    <meta property="og:description" content="Top #1 RFL Script">
+    <meta property="og:url" content="https://999.hbe.world">
+    <meta property="og:type" content="website">
+    <title>999cc</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: #000428;
+            color: white;
+            text-align: center;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .header {
+            margin-top: 20vh;
+            font-size: 4.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation: slideDown 1.5s ease-out;
+        }
+
+        .features {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: slideDown 2s ease-out;
+        }
+
+        .features ul {
+            text-align: left;
+            margin: 0 auto;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .features li {
+            margin: 10px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="starCanvas"></canvas>
+
+    <div class="content">
+        <div class="header">999.CC</div>
+        <div class="features">
+            <h2>Features:</h2>
+            <ul>
+                <li>Xyz reach up to 25 studs (with Hbe visualizer)</li>
+                <li>Anti ankle</li>
+                <li>Anti shielding</li>
+                <li>GK Reach</li>
+                <li>Ball pred</li>
+                <li>Auto switch foot</li>
+                <li>Infinite stamina</li>
+                <li>Ball Magnet</li>
+                <li>Ball aimbot with smoothness</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('starCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let stars = [];
+
+        function create() {
+            for (let i = 0; i < 200; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 2 + 0.5,
+                    speed: Math.random() * 0.5 + 0.2,
+                    opacity: Math.random() * 0.5 + 0.5
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let star of stars) {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                ctx.fill();
+
+                star.y += star.speed;
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                    star.x = Math.random() * canvas.width;
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        create();
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            stars = [];
+            create();
+        });
+    </script>
+</body>
+</html>
