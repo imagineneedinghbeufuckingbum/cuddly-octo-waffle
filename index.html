@@ -42,21 +42,38 @@
             animation: slideDown 1.5s ease-out;
         }
 
-        .features {
-            font-size: 1.5rem;
-            margin-top: 20px;
+        .sub-header {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
             animation: slideDown 2s ease-out;
         }
 
-        .features ul {
-            text-align: left;
-            margin: 0 auto;
-            display: inline-block;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        .btn-container {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
         }
 
-        .features li {
-            margin: 10px 0;
+        .btn {
+            font-size: 1.2rem;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1.5s ease-out;
+            border: 1px solid white;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.5);
         }
 
         @keyframes fadeIn {
@@ -85,20 +102,8 @@
 
     <div class="content">
         <div class="header">999.CC</div>
-        <div class="features">
-            <h2>Features:</h2>
-            <ul>
-                <li>Xyz reach up to 25 studs (with Hbe visualizer)</li>
-                <li>Anti ankle</li>
-                <li>Anti shielding</li>
-                <li>GK Reach</li>
-                <li>Ball pred</li>
-                <li>Auto switch foot</li>
-                <li>Infinite stamina</li>
-                <li>Ball Magnet</li>
-                <li>Ball aimbot with smoothness</li>
-            </ul>
-        </div>
+        <div class="sub-header">#1 Legit RFL Script</div>
+        <button class="btn" onclick="window.open('https://hbe.world/features', '_blank')">Features</button>
     </div>
 
     <script>
