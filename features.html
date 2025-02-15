@@ -10,12 +10,14 @@
     <meta property="og:type" content="website">
     <title>999cc</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
-            font-family: 'Poppins', sans-serif;
-            background: #000428;
+            font-family: 'Orbitron', sans-serif;
+            background: radial-gradient(circle, #000428, #004e92);
             color: white;
             text-align: center;
         }
@@ -35,28 +37,39 @@
         }
 
         .header {
-            margin-top: 20vh;
-            font-size: 4.5rem;
-            font-weight: bold;
+            margin-top: 18vh;
+            font-size: 5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(90deg, #ff0080, #ffdd00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-            animation: slideDown 1.5s ease-out;
+            animation: glow 2s infinite alternate;
         }
 
         .features {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-top: 20px;
             animation: slideDown 2s ease-out;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
         }
 
         .features ul {
             text-align: left;
             margin: 0 auto;
             display: inline-block;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
         .features li {
-            margin: 10px 0;
+            margin: 12px 0;
+            font-size: 1.4rem;
+            line-height: 1.6;
         }
 
         @keyframes fadeIn {
@@ -78,6 +91,15 @@
                 opacity: 1;
             }
         }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 0, 128, 0.8), 0 0 30px rgba(255, 221, 0, 0.6);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 0, 128, 1), 0 0 40px rgba(255, 221, 0, 0.8);
+            }
+        }
     </style>
 </head>
 <body>
@@ -86,17 +108,17 @@
     <div class="content">
         <div class="header">999.CC</div>
         <div class="features">
-            <h2>Features:</h2>
+            <h2>🔥 Features 🔥</h2>
             <ul>
-                <li>Xyz reach up to 25 studs (with Hbe visualizer)</li>
-                <li>Anti ankle</li>
-                <li>Anti shielding</li>
-                <li>GK Reach</li>
-                <li>Ball pred</li>
-                <li>Auto switch foot</li>
-                <li>Infinite stamina</li>
-                <li>Ball Magnet</li>
-                <li>Ball aimbot with smoothness</li>
+                <li>⚡ XYZ Reach up to 25 studs (Works for Solara, with HBE visualizer)</li>
+                <li>🦶 Anti-Ankle</li>
+                <li>🛡️ Anti-Shielding</li>
+                <li>🧤 GK Reach</li>
+                <li>🎯 Ball Prediction</li>
+                <li>🔄 Auto Switch Foot</li>
+                <li>🔋 Infinite Stamina</li>
+                <li>🧲 Ball Magnet</li>
+                <li>🎯 Ball Aimbot (Smooth & Precise)</li>
             </ul>
         </div>
     </div>
